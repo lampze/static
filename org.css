@@ -1,0 +1,87 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  font-size: 1.25em;
+}
+
+h1:before,
+h2:before,
+h3:before,
+h4:before {
+  position: absolute;
+  top: auto;
+  color: #ccc;
+  transform: translateX(-100%);
+  left: -0.25em;
+}
+h1:before {
+  content: "✺";
+}
+h2:before {
+  content: "✹";
+}
+h3:before {
+  content: "✷";
+}
+h4:before {
+  content: "✶";
+}
+
+/* table of content */
+#table-of-contents {
+  margin-top: 105px;
+  font-size: 10pt;
+  font-family: sans-serif;
+  position: fixed;
+  right: 0em;
+  top: 0em;
+  background: rgba(255, 255, 255, 0.8);
+  line-height: 12pt;
+  text-align: right;
+  box-shadow: 0 0 1em #777777;
+  -webkit-box-shadow: 0 0 1em #777777;
+  -moz-box-shadow: 0 0 1em #777777;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  /* ensure doesn't flow off the screen when expanded */
+  max-height: 80%;
+  overflow: auto;
+  z-index: 10;
+}
+#table-of-contents h2 {
+  font-size: 13pt;
+  max-width: 10em;
+  border: 0;
+  font-weight: normal;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.05em;
+  padding-bottom: 1em;
+}
+
+#table-of-contents #text-table-of-contents {
+  display: none;
+  text-align: left;
+}
+#table-of-contents:hover #text-table-of-contents {
+  display: block;
+  padding: 0.5em;
+  margin-top: -1.5em;
+}
+#table-of-contents h2::before {
+  content: "";
+}
+#table-of-contents ul {
+  margin-left: 14pt;
+  padding: 0;
+}
+
+#table-of-contents li {
+  padding: 0;
+  margin: 1px;
+  list-style: none;
+}

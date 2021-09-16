@@ -1,0 +1,267 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 3em;
+  font-family: Menlo, Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fafafa;
+}
+p {
+  margin: 0 0 1em;
+}
+
+/* Responsive -------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Increase body padding and font-sizes */
+  body {
+    padding: 40px;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  h1:before,
+  h2:before,
+  h3:before {
+    display: inline;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 40px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  position: relative;
+  margin: 0.25em 0 0;
+  color: #111;
+  text-rendering: optimizeLegibility;
+}
+i,
+em,
+b,
+strong {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+}
+b,
+strong {
+  font-weight: bold;
+  color: #333;
+}
+b:before,
+b:after,
+strong:before,
+strong:after {
+  content: "*";
+}
+i:before,
+i:after,
+em:before,
+em:after {
+  content: "/";
+}
+code,
+pre {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+code {
+  color: #556b2f;
+}
+code:before,
+code:after {
+  content: "=";
+  color: #cfcfcf;
+}
+pre {
+  display: block;
+  margin: 0 0 14px;
+  padding: 15px;
+  border-radius: 3px 3px 3px 3px;
+  line-height: 28px;
+  background-color: #f0f0f0;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+blockquote {
+  padding: 0 0 0 20px;
+  margin: 0 30px 20px -22.5px;
+  color: #999;
+  border-left: 8px solid #e5e5e5;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+img {
+  display: block;
+  margin: 0;
+  border-radius: 5px;
+}
+a {
+  font-weight: inherit;
+  line-height: inherit;
+  color: #115;
+  text-decoration: none;
+}
+sup a:before {
+  content: "[";
+}
+sup a:after {
+  content: "]";
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+table {
+  line-height: 2.5;
+  margin-bottom: 15px;
+  max-width: 100%;
+  width: 100%;
+}
+table td,
+table th {
+  padding: 0 15px;
+}
+table th.left,
+table td.left {
+  text-align: left;
+}
+table th.right,
+table td.right {
+  text-align: right;
+}
+/* post */
+#content li {
+  list-style: none outside none;
+}
+#content ul > li:before {
+  content: "- ";
+  margin-left: -1.25em;
+  color: #ccc;
+}
+#content ol {
+  counter-reset: o-list;
+}
+#content ol > li:before {
+  content: counter(o-list) ") ";
+  counter-increment: o-list;
+  margin-left: -1.85em;
+  color: #ccc;
+}
+#content img {
+  width: 100%;
+}
+
+/* special for li in pre */
+#content pre li {
+  list-style-type: decimal;
+}
+
+#content pre li:before {
+  display: none;
+}
+
+/* indent items*/
+.org-ul {
+  margin-right: 10px;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  color: #4c666c;
+  margin: 0 0 0 40px;
+}
+
+ol.linenums li {
+  line-height: 18px;
+  padding-left: 12px;
+}
+
+.fold::after {
+  content: "...";
+}
+
+.hide {
+  display: none;
+}
+.outline-bar {
+  background: linear-gradient(to right, #eee 2px, transparent 2px);
+  position: absolute;
+  width: 1em;
+  top: 0;
+  height: 100%;
+  left: -2em;
+}
+.outline-bar:hover {
+  background: linear-gradient(to right, #ccc 2px, transparent 2px);
+  cursor: pointer;
+}
+.outline-2,
+.outline-3,
+.outline-4 {
+  position: relative;
+  margin-left: 0.5em;
+}
+.org-src-container {
+  position: relative;
+}
+.src-fold pre.src {
+  max-height: 60vh;
+  overflow: hidden;
+}
+.src-fold::before {
+  content: "展开▼";
+  position: absolute;
+  left: -1.25em;
+  top: 0;
+  width: 1em;
+  text-align: center;
+  line-height: 1em;
+}
+.src-bar {
+  position: absolute;
+  background: linear-gradient(to left, #ccc 2px, transparent 2px);
+  width: 1em;
+  height: 100%;
+  top: 0;
+  left: -1em;
+}
+.src-bar:hover {
+  background: linear-gradient(to left, #aaa 2px, transparent 2px);
+  cursor: pointer;
+}
+::selection {
+  background-color: #ccc;
+}
+p::selection {
+  color: black;
+}
+#content {
+  background: #fafafa;
+  padding-top: 3em;
+  max-width: 800px;
+  position: relative;
+  margin: 5px auto;
+}
+.header {
+  overflow: auto;
+}
+#modi-date::before {
+  content: "更新于 ";
+}
