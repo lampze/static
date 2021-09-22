@@ -177,9 +177,12 @@ table td.right {
   display: none;
 }
 
-/* indent items*/
-.org-ul {
-  margin-right: 10px;
+ul {
+  padding-inline-start: 0.5em;
+}
+
+#content > .org-ul .timestamp-wrapper {
+  float: right;
 }
 
 /* Specify class=linenums on a pre to get line numbering */
